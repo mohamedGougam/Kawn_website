@@ -8,12 +8,12 @@ import {
   staggerContainer,
 } from "@/lib/motion";
 import { KawnLogoMark } from "@/components/ui/KawnLogoMark";
-import { bandMuted, sectionEdge } from "@/lib/ui";
+import { bandMuted, pageContainer, sectionEdge } from "@/lib/ui";
 
 export function Footer() {
   return (
     <footer className={`${sectionEdge} ${bandMuted}`}>
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 md:py-14">
+      <div className={`${pageContainer} px-4 py-8 sm:px-6 sm:py-10 md:py-11`}>
         <motion.div
           variants={staggerContainer(0.06, 0.04)}
           initial="hidden"
@@ -29,7 +29,8 @@ export function Footer() {
               </span>
             </div>
             <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-zinc-600 sm:mx-0">
-              Kawn — social media built around communities
+              Kawn — community-first social built for respect, safety, and
+              meaningful connection
             </p>
           </motion.div>
 

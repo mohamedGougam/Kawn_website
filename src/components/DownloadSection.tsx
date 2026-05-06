@@ -9,15 +9,15 @@ import {
   motionViewport,
   staggerContainer,
 } from "@/lib/motion";
-import { bodyLead, heading2 } from "@/lib/ui";
+import { bodyLead, heading2, pageContainer } from "@/lib/ui";
 
 export function DownloadSection() {
   return (
     <section
       id="download"
-      className="scroll-mt-[var(--kawn-header-h)] bg-gradient-to-b from-zinc-50/50 via-white to-white px-4 py-16 sm:px-6 sm:py-24 md:py-28"
+      className="scroll-mt-[var(--kawn-header-h)] bg-gradient-to-b from-zinc-50/50 via-white to-white px-4 py-12 sm:px-6 sm:py-16 md:py-16 lg:py-14 xl:py-12"
     >
-      <div className="mx-auto max-w-5xl">
+      <div className={pageContainer}>
         <div className="relative overflow-hidden rounded-2xl border border-zinc-200/70 bg-white/40 shadow-[0_28px_72px_-32px_rgba(15,23,42,0.18),0_1px_0_0_rgba(15,23,42,0.04)] ring-1 ring-zinc-950/[0.04] backdrop-blur-[2px] sm:rounded-[1.75rem]">
           <div className="absolute inset-0">
             <Image
@@ -40,7 +40,7 @@ export function DownloadSection() {
           </div>
 
           <motion.div
-            className="relative z-10 flex min-h-[min(20rem,58vh)] flex-col items-center justify-center px-5 py-12 text-center sm:min-h-[24rem] sm:px-10 sm:py-16 md:min-h-[26rem] md:py-20"
+            className="relative z-10 flex min-h-[min(17rem,48vh)] flex-col items-center justify-center px-5 py-10 text-center sm:min-h-[20rem] sm:px-8 sm:py-14 md:min-h-[21rem] md:py-16 lg:min-h-[19rem] lg:py-14"
             variants={staggerContainer(0.11, 0.07)}
             initial="hidden"
             whileInView="visible"
@@ -54,22 +54,22 @@ export function DownloadSection() {
             </motion.h2>
             <motion.p
               variants={fadeSlideUp}
-              className={`mt-4 max-w-md sm:mt-5 ${bodyLead}`}
+              className={`mt-3 max-w-lg sm:mt-4 ${bodyLead}`}
             >
-              Get the app and bring communities, events, and conversations with
-              you—wherever you go.
+              Join a healthier social platform built around communities,
+              respect, safety, and meaningful human connection.
             </motion.p>
 
             <motion.div
               variants={fadeSlideUp}
-              className="mt-8 w-full max-w-md sm:mt-10 sm:max-w-none md:mt-12"
+              className="mt-7 w-full max-w-md sm:mt-8 sm:max-w-none md:mt-9"
             >
               <StoreBadges emphasis />
             </motion.div>
 
             <motion.p
               variants={fadeSlideUp}
-              className="mt-12 max-w-lg text-center text-[0.7rem] leading-relaxed text-zinc-500 sm:text-xs"
+              className="mt-8 max-w-lg text-center text-[0.7rem] leading-snug text-zinc-500 sm:mt-10 sm:text-xs"
             >
               Apple and the Apple logo are trademarks of Apple Inc. Google Play
               and the Google Play logo are trademarks of Google LLC.

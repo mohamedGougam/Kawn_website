@@ -70,7 +70,7 @@ export function StoreBadges({
           <AppleIcon className="h-9 w-9 shrink-0 text-zinc-900" />
           <span className="leading-tight">
             <span className="block text-[10px] font-medium uppercase tracking-wide text-zinc-500">
-              Download on the
+              Download on
             </span>
             <span className="block text-lg font-semibold text-zinc-900">
               App Store

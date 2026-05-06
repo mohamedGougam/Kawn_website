@@ -8,10 +8,14 @@ type SectionProps = {
   padding?: "default" | "tight" | "loose";
 };
 
+/** Vertical rhythm: comfortable on mobile, denser on xl+ wide screens */
 const paddingClass = {
-  default: "py-20 sm:py-24 md:py-28 lg:py-32",
-  tight: "py-16 sm:py-20 md:py-24 lg:py-28",
-  loose: "py-24 sm:py-28 md:py-32 lg:py-40",
+  default:
+    "py-14 sm:py-16 md:py-16 lg:py-16 xl:py-14 2xl:py-12",
+  tight:
+    "py-11 sm:py-12 md:py-14 lg:py-12 xl:py-11 2xl:py-11",
+  loose:
+    "py-16 sm:py-[4.5rem] md:py-20 lg:py-20 xl:py-16 2xl:py-16",
 } as const;
 
 export function Section({

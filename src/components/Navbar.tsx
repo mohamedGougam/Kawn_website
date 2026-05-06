@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { easeOut, hoverLiftSpring } from "@/lib/motion";
 import { KawnLogoMark } from "@/components/ui/KawnLogoMark";
 import { mainNav } from "@/lib/navigation";
+import { pageContainer } from "@/lib/ui";
 
 const linkClass =
   "rounded-lg px-2.5 py-2 text-sm font-medium text-zinc-600 transition-colors duration-200 hover:bg-zinc-50/90 hover:text-zinc-900";
@@ -49,7 +50,9 @@ export function Navbar() {
             : "border-b border-transparent bg-white/78 backdrop-blur-md"
         }`}
       >
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+        <div
+          className={`${pageContainer} flex h-16 items-center justify-between gap-3 px-4 sm:px-6`}
+        >
           <Link
             href="#"
             className="flex min-w-0 shrink-0 items-center gap-2.5 transition-opacity hover:opacity-90"

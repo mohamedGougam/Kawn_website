@@ -14,6 +14,7 @@ import {
   cardSurface,
   cardSurfaceHover,
   heading2,
+  pageContainer,
   sectionEdge,
 } from "@/lib/ui";
 
@@ -21,28 +22,29 @@ const cards = [
   {
     title: "Communities",
     description:
-      "Connect through shared interests and group experiences.",
+      "Gather around shared interests with spaces designed for respect and belonging.",
   },
   {
     title: "Events",
     description:
-      "Turn online discovery into real-world participation.",
+      "Turn online discovery into real-world participation and lasting connection.",
   },
   {
     title: "Discovery",
     description:
-      "Find people, topics, and communities that match you.",
+      "Find people, topics, and communities that match you—without the endless noise.",
   },
   {
     title: "Conversations",
-    description: "Enjoy more meaningful social interaction.",
+    description:
+      "Share ideas and replies in a calmer feed built for healthier engagement.",
   },
 ] as const;
 
 export function WhyKawn() {
   return (
     <Section id="why-kawn" className={`${sectionEdge} ${bandMuted}`}>
-      <div className="mx-auto max-w-6xl">
+      <div className={pageContainer}>
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,13 +53,13 @@ export function WhyKawn() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className={heading2}>Why Kawn</h2>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
-            Everything you just explored—summarized before you download.
+          <p className="mt-2.5 text-sm leading-snug text-zinc-600 sm:text-base sm:leading-normal">
+            Safer, healthier, more human social—summarized before you download.
           </p>
         </motion.div>
 
         <motion.ul
-          className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:mt-14 lg:grid-cols-4 lg:gap-6"
+          className="mt-8 grid gap-3.5 sm:mt-9 sm:grid-cols-2 sm:gap-4 lg:mt-10 lg:grid-cols-4 lg:gap-4 xl:gap-[1.125rem]"
           variants={staggerContainer(0.08, 0.06)}
           initial="hidden"
           whileInView="visible"
@@ -68,16 +70,16 @@ export function WhyKawn() {
               <motion.div
                 whileHover={{ y: hoverLiftY }}
                 transition={hoverLiftSpring}
-                className={`group flex h-full flex-col p-5 transition-[transform,box-shadow,border-color,background-color] duration-300 sm:p-6 ${cardSurface} ${cardSurfaceHover}`}
+                className={`group flex h-full flex-col p-4 transition-[transform,box-shadow,border-color,background-color] duration-300 sm:p-5 ${cardSurface} ${cardSurfaceHover}`}
               >
                 <div
-                  className="mb-4 h-1 w-9 rounded-full bg-gradient-to-r from-orange-500 to-orange-400"
+                  className="mb-3 h-1 w-9 rounded-full bg-gradient-to-r from-orange-500 to-orange-400"
                   aria-hidden
                 />
-                <h3 className="text-base font-semibold tracking-[-0.02em] text-zinc-900 sm:text-[1.0625rem]">
+                <h3 className="text-[0.9375rem] font-semibold leading-snug tracking-[-0.02em] text-zinc-900 sm:text-base">
                   {card.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+                <p className="mt-2 flex-1 text-sm leading-snug text-zinc-600 sm:leading-[1.5]">
                   {card.description}
                 </p>
               </motion.div>

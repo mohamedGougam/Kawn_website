@@ -2,6 +2,9 @@
  * Shared visual tokens — radius, shadows, surfaces (Kawn marketing).
  */
 
+/** Main content width — centered, ~1240px cap for large desktops */
+export const pageContainer = "mx-auto w-full max-w-[1240px]";
+
 /** Hairline between bands */
 export const sectionEdge = "border-t border-zinc-200/40";
 
@@ -42,7 +45,7 @@ export const eyebrow =
   "text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-orange-800/85 sm:text-[0.8125rem] sm:tracking-[0.14em]";
 
 export const heading2 =
-  "text-2xl font-semibold tracking-[-0.02em] text-zinc-900 sm:text-3xl lg:text-[2.125rem] lg:leading-[1.18]";
+  "text-2xl font-semibold tracking-[-0.02em] text-zinc-900 sm:text-3xl lg:text-[2.0625rem] lg:leading-[1.14]";
 
 export const bodyLead =
-  "text-base leading-[1.65] text-zinc-600 sm:text-[1.0625rem]";
+  "text-base leading-[1.55] text-zinc-600 sm:text-[1.0625rem] sm:leading-[1.58]";

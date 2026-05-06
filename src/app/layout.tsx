@@ -32,6 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${kawnSans.variable} h-full scroll-smooth`}>
+      <head>
+        <link rel="icon" href="/images/Logo.jpeg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/images/Logo.jpeg" />
+      </head>
       <body className="min-h-full flex flex-col bg-white text-zinc-900 antialiased">
         {children}
       </body>

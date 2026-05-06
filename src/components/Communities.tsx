@@ -10,7 +10,14 @@ import {
   motionViewportRelaxed,
   staggerContainer,
 } from "@/lib/motion";
-import { bandWhite, bodyLead, chipBase, heading2, sectionEdge } from "@/lib/ui";
+import {
+  bandWhite,
+  bodyLead,
+  chipBase,
+  heading2,
+  pageContainer,
+  sectionEdge,
+} from "@/lib/ui";
 
 const highlights = [
   "Interest-based groups",
@@ -22,8 +29,8 @@ const highlights = [
 export function Communities() {
   return (
     <Section id="communities" className={`${sectionEdge} ${bandWhite}`}>
-      <div className="mx-auto max-w-6xl">
-        <div className="grid gap-8 md:gap-10 lg:grid-cols-2 lg:items-center lg:gap-16 xl:gap-[4.25rem]">
+      <div className={pageContainer}>
+        <div className="grid gap-6 md:gap-8 lg:grid-cols-2 lg:items-center lg:gap-10 xl:gap-12">
           <motion.div
             className="order-2 min-w-0 text-center lg:order-1 lg:text-left"
             variants={staggerContainer(0.08, 0.06)}
@@ -36,15 +43,16 @@ export function Communities() {
             </motion.h2>
             <motion.p
               variants={fadeSlideUpTight}
-              className={`mx-auto mt-4 max-w-xl sm:mt-5 lg:mx-0 ${bodyLead}`}
+              className={`mx-auto mt-3 max-w-xl sm:mt-4 lg:mx-0 ${bodyLead}`}
             >
-              Communities are the heart of Kawn—places to gather around shared
-              interests, follow what you care about, and meet people who get it.
+              Communities are the heart of Kawn—thoughtful spaces to gather
+              around shared interests, follow what you care about, and meet
+              people who get it.
             </motion.p>
 
             <motion.ul
               variants={fadeSlideUpTight}
-              className="mt-7 flex flex-wrap justify-center gap-2 sm:mt-8 lg:mt-9 lg:justify-start"
+              className="mt-5 flex flex-wrap justify-center gap-2 sm:mt-6 lg:mt-7 lg:justify-start"
               aria-label="Community highlights"
             >
               {highlights.map((label) => (

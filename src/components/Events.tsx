@@ -10,7 +10,14 @@ import {
   motionViewportRelaxed,
   staggerContainer,
 } from "@/lib/motion";
-import { bandMuted, bodyLead, chipBase, heading2, sectionEdge } from "@/lib/ui";
+import {
+  bandMuted,
+  bodyLead,
+  chipBase,
+  heading2,
+  pageContainer,
+  sectionEdge,
+} from "@/lib/ui";
 
 const highlights = [
   "Create and join events",
@@ -21,8 +28,8 @@ const highlights = [
 export function Events() {
   return (
     <Section id="events" className={`${sectionEdge} ${bandMuted}`}>
-      <div className="mx-auto max-w-6xl">
-        <div className="grid gap-8 md:gap-10 lg:grid-cols-2 lg:items-center lg:gap-16 xl:gap-[4.25rem]">
+      <div className={pageContainer}>
+        <div className="grid gap-6 md:gap-8 lg:grid-cols-2 lg:items-center lg:gap-10 xl:gap-12">
           <motion.div
             className="order-2 w-full min-w-0 lg:order-1"
             initial="hidden"
@@ -51,16 +58,16 @@ export function Events() {
             </motion.h2>
             <motion.p
               variants={fadeSlideUpTight}
-              className={`mx-auto mt-4 max-w-xl sm:mt-5 lg:mx-0 ${bodyLead}`}
+              className={`mx-auto mt-3 max-w-xl sm:mt-4 lg:mx-0 ${bodyLead}`}
             >
-              Take what you find online into the real world—create and join
-              events, meetups, and experiences with the communities you already
-              care about.
+              Take what you discover online into real life—create and join
+              events, meetups, and experiences that strengthen the communities
+              you already care about.
             </motion.p>
 
             <motion.ul
               variants={fadeSlideUpTight}
-              className="mt-7 flex flex-wrap justify-center gap-2 sm:mt-8 lg:mt-9 lg:justify-start"
+              className="mt-5 flex flex-wrap justify-center gap-2 sm:mt-6 lg:mt-7 lg:justify-start"
               aria-label="Event highlights"
             >
               {highlights.map((label) => (
