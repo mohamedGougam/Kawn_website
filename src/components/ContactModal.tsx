@@ -6,7 +6,7 @@ import { easeOut } from "@/lib/motion";
 import { cardSurface } from "@/lib/ui";
 import { useLanguage } from "@/lib/LanguageContext";
 
-const KAWN_SUPPORT_URL = "http://20.119.99.223/accounts/support/submit/";
+const KAWN_SUPPORT_URL = "https://20.119.99.223/accounts/support/submit/";
 
 type Status = "idle" | "loading" | "success" | "error";
 
