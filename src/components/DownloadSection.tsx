@@ -9,9 +9,12 @@ import {
   motionViewport,
   staggerContainer,
 } from "@/lib/motion";
+import { useLanguage } from "@/lib/LanguageContext";
 import { bodyLead, heading2, pageContainer } from "@/lib/ui";
 
 export function DownloadSection() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="download"
@@ -50,14 +53,13 @@ export function DownloadSection() {
               variants={fadeSlideUp}
               className={`max-w-xl text-center ${heading2}`}
             >
-              Download Kawn Today
+              {t.downloadSection.title}
             </motion.h2>
             <motion.p
               variants={fadeSlideUp}
               className={`mt-3 max-w-lg sm:mt-4 ${bodyLead}`}
             >
-              Join a healthier social platform built around communities,
-              respect, safety, and meaningful human connection.
+              {t.downloadSection.description}
             </motion.p>
 
             <motion.div
@@ -71,8 +73,7 @@ export function DownloadSection() {
               variants={fadeSlideUp}
               className="mt-8 max-w-lg text-center text-[0.7rem] leading-snug text-zinc-500 sm:mt-10 sm:text-xs"
             >
-              Apple and the Apple logo are trademarks of Apple Inc. Google Play
-              and the Google Play logo are trademarks of Google LLC.
+              {t.downloadSection.trademarks}
             </motion.p>
           </motion.div>
         </div>

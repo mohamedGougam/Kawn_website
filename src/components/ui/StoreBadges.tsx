@@ -29,8 +29,10 @@ function PlayIcon({ className }: { className?: string }) {
   );
 }
 
+import { useLanguage } from "@/lib/LanguageContext";
+
 const badgeBase =
-  "inline-flex min-h-[3rem] w-full items-center justify-center gap-3 rounded-xl border bg-white/95 px-4 py-3.5 text-left shadow-[0_1px_0_0_rgba(15,23,42,0.04),0_10px_28px_-22px_rgba(15,23,42,0.12)] ring-1 ring-zinc-950/[0.04] transition-[border-color,box-shadow,transform,background-color] duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 sm:min-h-0 sm:w-auto sm:justify-start sm:rounded-2xl sm:px-5";
+  "inline-flex min-h-[3rem] w-full items-center justify-center gap-3 rounded-xl border bg-white/95 px-4 py-3.5 text-start shadow-[0_1px_0_0_rgba(15,23,42,0.04),0_10px_28px_-22px_rgba(15,23,42,0.12)] ring-1 ring-zinc-950/[0.04] transition-[border-color,box-shadow,transform,background-color] duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 sm:min-h-0 sm:w-auto sm:justify-start sm:rounded-2xl sm:px-5";
 
 const badgeTone = {
   default:
@@ -50,6 +52,7 @@ export function StoreBadges({
   alignStart = false,
   emphasis = false,
 }: StoreBadgesProps) {
+  const { t } = useLanguage();
   const tone = emphasis ? badgeTone.emphasis : badgeTone.default;
   return (
     <div
@@ -70,7 +73,7 @@ export function StoreBadges({
           <AppleIcon className="h-9 w-9 shrink-0 text-zinc-900" />
           <span className="leading-tight">
             <span className="block text-[10px] font-medium uppercase tracking-wide text-zinc-500">
-              Download on
+              {t.storeBadges.apple}
             </span>
             <span className="block text-lg font-semibold text-zinc-900">
               App Store
@@ -93,7 +96,7 @@ export function StoreBadges({
           <PlayIcon className="h-9 w-9 shrink-0 text-[#0F9D58]" />
           <span className="leading-tight">
             <span className="block text-[10px] font-medium uppercase tracking-wide text-zinc-500">
-              Get it on
+              {t.storeBadges.google}
             </span>
             <span className="block text-lg font-semibold text-zinc-900">
               Google Play

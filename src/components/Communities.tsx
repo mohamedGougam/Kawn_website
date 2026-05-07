@@ -10,6 +10,7 @@ import {
   motionViewportRelaxed,
   staggerContainer,
 } from "@/lib/motion";
+import { useLanguage } from "@/lib/LanguageContext";
 import {
   bandWhite,
   bodyLead,
@@ -19,44 +20,37 @@ import {
   sectionEdge,
 } from "@/lib/ui";
 
-const highlights = [
-  "Interest-based groups",
-  "Community-first spaces",
-  "Shared passions",
-  "A calmer place to belong",
-];
-
 export function Communities() {
+  const { t, isRTL } = useLanguage();
+
   return (
     <Section id="communities" className={`${sectionEdge} ${bandWhite}`}>
       <div className={pageContainer}>
         <div className="grid gap-6 md:gap-8 lg:grid-cols-2 lg:items-center lg:gap-10 xl:gap-12">
           <motion.div
-            className="order-2 min-w-0 text-center lg:order-1 lg:text-left"
+            className={`order-2 min-w-0 text-center lg:order-1 ${isRTL ? "lg:text-right" : "lg:text-left"}`}
             variants={staggerContainer(0.08, 0.06)}
             initial="hidden"
             whileInView="visible"
             viewport={motionViewportRelaxed}
           >
             <motion.h2 variants={fadeSlideUpTight} className={heading2}>
-              Find Your Communities
+              {t.communities.title}
             </motion.h2>
             <motion.p
               variants={fadeSlideUpTight}
               className={`mx-auto mt-3 max-w-xl sm:mt-4 lg:mx-0 ${bodyLead}`}
             >
-              Communities are the heart of Kawn—thoughtful spaces to gather
-              around shared interests, follow what you care about, and meet
-              people who get it.
+              {t.communities.description}
             </motion.p>
 
             <motion.ul
               variants={fadeSlideUpTight}
-              className="mt-5 flex flex-wrap justify-center gap-2 sm:mt-6 lg:mt-7 lg:justify-start"
+              className={`mt-5 flex flex-wrap justify-center gap-2 sm:mt-6 lg:mt-7 ${isRTL ? "lg:justify-end" : "lg:justify-start"}`}
               aria-label="Community highlights"
             >
-              {highlights.map((label) => (
-                <li key={label}>
+              {t.communities.highlights.map((label, index) => (
+                <li key={index}>
                   <motion.span
                     whileHover={{ y: -2 }}
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}

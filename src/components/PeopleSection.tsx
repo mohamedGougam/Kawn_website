@@ -10,6 +10,7 @@ import {
   motionViewportRelaxed,
   staggerContainer,
 } from "@/lib/motion";
+import { useLanguage } from "@/lib/LanguageContext";
 import {
   bandWarm,
   bodyLead,
@@ -20,15 +21,9 @@ import {
   sectionEdge,
 } from "@/lib/ui";
 
-const themes = [
-  "Discovery",
-  "People",
-  "Posts",
-  "Replies",
-  "Relevance",
-];
-
 export function PeopleSection() {
+  const { t, isRTL } = useLanguage();
+
   return (
     <Section id="discover" className={`${sectionEdge} ${bandWarm}`}>
       <div className={pageContainer}>
@@ -42,33 +37,31 @@ export function PeopleSection() {
           >
             <motion.p
               variants={fadeSlideUpTight}
-              className={`text-center lg:text-left ${eyebrow}`}
+              className={`text-center ${isRTL ? "lg:text-right" : "lg:text-left"} ${eyebrow}`}
             >
-              Discovery &amp; conversation
+              {t.people.eyebrow}
             </motion.p>
             <motion.h2
               variants={fadeSlideUpTight}
-              className={`mt-2.5 text-center lg:text-left ${heading2}`}
+              className={`mt-2.5 text-center ${isRTL ? "lg:text-right" : "lg:text-left"} ${heading2}`}
             >
-              Find people and ideas{" "}
-              <span className="text-orange-700">worth your attention</span>
+              {t.people.title}{" "}
+              <span className="text-orange-700">{t.people.titleAccent}</span>
             </motion.h2>
             <motion.p
               variants={fadeSlideUpTight}
-              className={`mx-auto mt-3 max-w-xl text-center sm:mt-4 lg:mx-0 lg:text-left ${bodyLead}`}
+              className={`mx-auto mt-3 max-w-xl text-center sm:mt-4 lg:mx-0 ${isRTL ? "lg:text-right" : "lg:text-left"} ${bodyLead}`}
             >
-              Explore profiles, posts, and threads with a feed tuned for
-              relevance—so discovery stays social and conversations stay
-              meaningful.
+              {t.people.description}
             </motion.p>
 
             <motion.ul
               variants={fadeSlideUpTight}
-              className="mt-5 flex flex-wrap justify-center gap-2 sm:mt-6 lg:mt-7 lg:justify-start"
+              className={`mt-5 flex flex-wrap justify-center gap-2 sm:mt-6 lg:mt-7 ${isRTL ? "lg:justify-end" : "lg:justify-start"}`}
               aria-label="Discovery and conversation highlights"
             >
-              {themes.map((label) => (
-                <li key={label}>
+              {t.people.themes.map((label, index) => (
+                <li key={index}>
                   <motion.span
                     whileHover={{ y: -2 }}
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}

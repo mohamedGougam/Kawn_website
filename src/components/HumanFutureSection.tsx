@@ -7,17 +7,12 @@ import {
   motionViewportRelaxed,
   staggerContainer,
 } from "@/lib/motion";
+import { useLanguage } from "@/lib/LanguageContext";
 import { bandMuted, heading2, pageContainer, sectionEdge } from "@/lib/ui";
 
-const highlights = [
-  "Freedom of expression with respect",
-  "Safer spaces for children and families",
-  "Positive and healthy communities",
-  "Real knowledge and experience exchange",
-  "AI that supports communities",
-] as const;
-
 export function HumanFutureSection() {
+  const { t, isRTL } = useLanguage();
+
   return (
     <Section
       id="human-social"
@@ -39,26 +34,23 @@ export function HumanFutureSection() {
           <h2
             className={`${heading2} mx-auto leading-[1.12] sm:leading-[1.1]`}
           >
-            The Future of Social Media Should Feel Human Again
+            {t.humanFuture.title}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-[1.55] text-zinc-600 sm:mt-5 sm:text-[1.0625rem] sm:leading-[1.56]">
-            Kawn believes social media should empower people, not divide them.
-            That&apos;s why Kawn focuses on freedom of expression with respect,
-            safe digital spaces for families and children, positive communities,
-            real knowledge exchange, and AI that supports people.
+            {t.humanFuture.description}
           </p>
         </motion.div>
 
         <motion.ul
-          className="mx-auto mt-8 max-w-xl space-y-2.5 text-left sm:mt-10 sm:space-y-3"
+          className={`mx-auto mt-8 max-w-xl space-y-2.5 sm:mt-10 sm:space-y-3 ${isRTL ? "text-right" : "text-left"}`}
           variants={staggerContainer(0.07, 0.08)}
           initial="hidden"
           whileInView="visible"
           viewport={motionViewportRelaxed}
         >
-          {highlights.map((line) => (
+          {t.humanFuture.highlights.map((line, index) => (
             <motion.li
-              key={line}
+              key={index}
               variants={fadeSlideUpTight}
               className="flex gap-3 rounded-2xl border border-zinc-200/60 bg-white/80 px-4 py-3 shadow-[0_1px_0_0_rgba(15,23,42,0.04),0_12px_32px_-28px_rgba(15,23,42,0.12)] ring-1 ring-zinc-950/[0.03] backdrop-blur-[2px] sm:px-4 sm:py-3.5"
             >

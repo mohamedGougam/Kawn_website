@@ -9,6 +9,7 @@ import {
   motionViewportRelaxed,
   staggerContainer,
 } from "@/lib/motion";
+import { useLanguage } from "@/lib/LanguageContext";
 import {
   bandMuted,
   cardSurface,
@@ -18,30 +19,16 @@ import {
   sectionEdge,
 } from "@/lib/ui";
 
-const cards = [
-  {
-    title: "Communities",
-    description:
-      "Gather around shared interests with spaces designed for respect and belonging.",
-  },
-  {
-    title: "Events",
-    description:
-      "Turn online discovery into real-world participation and lasting connection.",
-  },
-  {
-    title: "Discovery",
-    description:
-      "Find people, topics, and communities that match you—without the endless noise.",
-  },
-  {
-    title: "Conversations",
-    description:
-      "Share ideas and replies in a calmer feed built for healthier engagement.",
-  },
-] as const;
-
 export function WhyKawn() {
+  const { t, isRTL } = useLanguage();
+
+  const cards = [
+    t.whyKawn.cards.communities,
+    t.whyKawn.cards.events,
+    t.whyKawn.cards.discovery,
+    t.whyKawn.cards.conversations,
+  ];
+
   return (
     <Section id="why-kawn" className={`${sectionEdge} ${bandMuted}`}>
       <div className={pageContainer}>
@@ -52,9 +39,9 @@ export function WhyKawn() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className={heading2}>Why Kawn</h2>
+          <h2 className={heading2}>{t.whyKawn.title}</h2>
           <p className="mt-2.5 text-sm leading-snug text-zinc-600 sm:text-base sm:leading-normal">
-            Safer, healthier, more human social—summarized before you download.
+            {t.whyKawn.description}
           </p>
         </motion.div>
 
@@ -65,15 +52,15 @@ export function WhyKawn() {
           whileInView="visible"
           viewport={motionViewportRelaxed}
         >
-          {cards.map((card) => (
-            <motion.li key={card.title} variants={fadeSlideUpTight} className="h-full">
+          {cards.map((card, index) => (
+            <motion.li key={index} variants={fadeSlideUpTight} className="h-full">
               <motion.div
                 whileHover={{ y: hoverLiftY }}
                 transition={hoverLiftSpring}
-                className={`group flex h-full flex-col p-4 transition-[transform,box-shadow,border-color,background-color] duration-300 sm:p-5 ${cardSurface} ${cardSurfaceHover}`}
+                className={`group flex h-full flex-col p-4 transition-[transform,box-shadow,border-color,background-color] duration-300 sm:p-5 text-start ${cardSurface} ${cardSurfaceHover}`}
               >
                 <div
-                  className="mb-3 h-1 w-9 rounded-full bg-gradient-to-r from-orange-500 to-orange-400"
+                  className={`mb-3 h-1 w-9 rounded-full bg-gradient-to-r ${isRTL ? "from-orange-400 to-orange-500" : "from-orange-500 to-orange-400"}`}
                   aria-hidden
                 />
                 <h3 className="text-[0.9375rem] font-semibold leading-snug tracking-[-0.02em] text-zinc-900 sm:text-base">

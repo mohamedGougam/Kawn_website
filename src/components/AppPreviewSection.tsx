@@ -10,9 +10,12 @@ import {
   motionViewport,
   staggerContainer,
 } from "@/lib/motion";
+import { useLanguage } from "@/lib/LanguageContext";
 import { bandWhite, imageFrameHero, pageContainer, sectionEdge } from "@/lib/ui";
 
 export function AppPreviewSection() {
+  const { t } = useLanguage();
+
   return (
     <Section id="app-preview" className={`${sectionEdge} ${bandWhite}`}>
       <div className={pageContainer}>
@@ -27,16 +30,14 @@ export function AppPreviewSection() {
             variants={fadeSlideUp}
             className="max-w-3xl px-1 text-3xl font-semibold tracking-[-0.03em] text-zinc-900 sm:px-0 sm:text-[2.125rem] sm:leading-[1.1] md:text-4xl md:leading-[1.08] lg:text-[2.25rem] xl:text-[2.375rem]"
           >
-            A polished app,{" "}
-            <span className="text-orange-600">built for mobile</span>
+            {t.appPreview.title}{" "}
+            <span className="text-orange-600">{t.appPreview.titleAccent}</span>
           </motion.h2>
           <motion.p
             variants={fadeSlideUp}
             className="mt-4 max-w-2xl px-1 text-base leading-[1.55] text-zinc-600 sm:mt-4 sm:px-0 sm:text-[1.0625rem] md:text-lg md:leading-[1.52] lg:text-[1.125rem]"
           >
-            Fast, readable, and thoughtfully designed—Kawn feels as refined as
-            the communities inside it, with a calm, modern experience you can
-            trust.
+            {t.appPreview.description}
           </motion.p>
 
           <motion.div

@@ -10,6 +10,7 @@ import {
   motionViewportRelaxed,
   staggerContainer,
 } from "@/lib/motion";
+import { useLanguage } from "@/lib/LanguageContext";
 import {
   bandMuted,
   bodyLead,
@@ -19,13 +20,9 @@ import {
   sectionEdge,
 } from "@/lib/ui";
 
-const highlights = [
-  "Create and join events",
-  "Discover activities nearby",
-  "Build real connections",
-];
-
 export function Events() {
+  const { t, isRTL } = useLanguage();
+
   return (
     <Section id="events" className={`${sectionEdge} ${bandMuted}`}>
       <div className={pageContainer}>
@@ -47,31 +44,29 @@ export function Events() {
           </motion.div>
 
           <motion.div
-            className="order-1 min-w-0 text-center lg:order-2 lg:text-left"
+            className={`order-1 min-w-0 text-center lg:order-2 ${isRTL ? "lg:text-right" : "lg:text-left"}`}
             variants={staggerContainer(0.08, 0.06)}
             initial="hidden"
             whileInView="visible"
             viewport={motionViewportRelaxed}
           >
             <motion.h2 variants={fadeSlideUpTight} className={heading2}>
-              Bring Communities Into Real Life
+              {t.events.title}
             </motion.h2>
             <motion.p
               variants={fadeSlideUpTight}
               className={`mx-auto mt-3 max-w-xl sm:mt-4 lg:mx-0 ${bodyLead}`}
             >
-              Take what you discover online into real life—create and join
-              events, meetups, and experiences that strengthen the communities
-              you already care about.
+              {t.events.description}
             </motion.p>
 
             <motion.ul
               variants={fadeSlideUpTight}
-              className="mt-5 flex flex-wrap justify-center gap-2 sm:mt-6 lg:mt-7 lg:justify-start"
+              className={`mt-5 flex flex-wrap justify-center gap-2 sm:mt-6 lg:mt-7 ${isRTL ? "lg:justify-end" : "lg:justify-start"}`}
               aria-label="Event highlights"
             >
-              {highlights.map((label) => (
-                <li key={label}>
+              {t.events.highlights.map((label, index) => (
+                <li key={index}>
                   <motion.span
                     whileHover={{ y: -2 }}
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}

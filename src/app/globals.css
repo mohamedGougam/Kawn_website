@@ -19,6 +19,11 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --font-sans: var(--font-kawn), ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-arabic {
+  font-family: var(--font-arabic) !important;
 }
 
 html {

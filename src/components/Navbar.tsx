@@ -5,8 +5,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { easeOut, hoverLiftSpring } from "@/lib/motion";
 import { KawnLogoMark } from "@/components/ui/KawnLogoMark";
-import { mainNav } from "@/lib/navigation";
 import { pageContainer } from "@/lib/ui";
+import { useLanguage } from "@/lib/LanguageContext";
+import { LanguageToggle } from "@/components/ui/LanguageToggle";
 
 const linkClass =
   "rounded-lg px-2.5 py-2 text-sm font-medium text-zinc-600 transition-colors duration-200 hover:bg-zinc-50/90 hover:text-zinc-900";
@@ -14,6 +15,15 @@ const linkClass =
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t, isRTL } = useLanguage();
+
+  const mainNav = [
+    { href: "#different", label: t.nav.values },
+    { href: "#communities", label: t.nav.communities },
+    { href: "#events", label: t.nav.events },
+    { href: "#discover", label: t.nav.discover },
+    { href: "#download", label: t.nav.download },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -81,7 +91,11 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-3">
+          <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-4">
+            <div className="hidden sm:block">
+              <LanguageToggle />
+            </div>
+
             <motion.span
               className="inline-flex max-w-[min(100%,11rem)] sm:max-w-none"
               whileHover={{ scale: 1.02 }}
@@ -93,10 +107,11 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="inline-flex min-h-11 min-w-0 items-center justify-center rounded-full border border-orange-500/25 bg-gradient-to-b from-orange-500 to-orange-600 px-3 py-2.5 text-center text-[0.8125rem] font-semibold leading-snug text-white shadow-[0_1px_0_0_rgba(255,255,255,0.18)_inset,0_10px_28px_-16px_rgba(234,88,12,0.45)] ring-1 ring-orange-600/25 transition-[background-color,box-shadow,transform,border-color] duration-200 hover:border-orange-400/35 hover:from-orange-500 hover:to-orange-600 hover:shadow-[0_1px_0_0_rgba(255,255,255,0.22)_inset,0_14px_36px_-14px_rgba(234,88,12,0.5)] active:from-orange-600 active:to-orange-700 sm:min-h-0 sm:px-5 sm:py-2.5 sm:text-sm"
               >
-                <span className="sm:hidden">Download</span>
-                <span className="hidden sm:inline">Download Kawn</span>
+                <span className="sm:hidden">{t.buttons.download}</span>
+                <span className="hidden sm:inline">{t.buttons.downloadKawn}</span>
               </Link>
             </motion.span>
+
             <button
               type="button"
               className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-zinc-200/80 bg-white/95 text-zinc-800 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] ring-1 ring-zinc-950/[0.03] transition-[background-color,color,box-shadow] duration-200 hover:border-zinc-300/90 hover:bg-zinc-50/95 hover:text-zinc-900 lg:hidden"
@@ -144,10 +159,14 @@ export function Navbar() {
               aria-label="Mobile primary"
             >
               <div className="flex flex-col gap-0.5 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom,0px))]">
+                <div className="mb-4 px-3 flex justify-between items-center">
+                  <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Language</span>
+                  <LanguageToggle />
+                </div>
                 {mainNav.map((item, i) => (
                   <motion.div
                     key={item.href}
-                    initial={{ opacity: 0, x: -6 }}
+                    initial={{ opacity: 0, x: isRTL ? 6 : -6 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.03 * i, duration: 0.2 }}
                   >
