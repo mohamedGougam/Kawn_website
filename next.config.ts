@@ -19,6 +19,14 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/api/support-proxy",
+        destination: "http://20.119.99.223/accounts/support/submit/",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
