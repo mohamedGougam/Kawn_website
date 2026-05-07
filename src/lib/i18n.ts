@@ -79,7 +79,9 @@ export const translations = {
       messageLabel: "Message",
       messagePlaceholder: "Describe your issue in detail...",
       sendButton: "Send Message",
-      successMessage: "Your message has been sent. We'll get back to you within 24 hours.",
+      successMessage: "Your message has been sent successfully! Our support team will get back to you shortly.",
+      errorMessage: "Something went wrong. Please try again.",
+      connectionError: "Connection error. Please check your internet connection.",
       footerNote: "Sent to support@kawn.io",
     },
     categories: {
@@ -270,7 +272,9 @@ export const translations = {
       messageLabel: "الرسالة",
       messagePlaceholder: "صف مشكلتك بالتفصيل...",
       sendButton: "إرسال الرسالة",
-      successMessage: "تم إرسال رسالتك. سنرد عليك خلال 24 ساعة.",
+      successMessage: "تم إرسال رسالتك بنجاح! سيتواصل معك فريق الدعم قريباً.",
+      errorMessage: "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+      connectionError: "خطأ في الاتصال. يرجى التحقق من اتصالك بالإنترنت.",
       footerNote: "ترسل إلى support@kawn.io",
     },
     categories: {

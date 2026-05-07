@@ -74,14 +74,15 @@ export function ContactModal({ open, onClose }: ContactModalProps) {
 
       if (res.ok) {
         setStatus("success");
-        setFeedback(data.message ?? t.contact.successMessage);
+        // Always use local translation for success to ensure it's in the correct language
+        setFeedback(t.contact.successMessage);
       } else {
         const errors = data.errors as Record<string, string> | undefined;
-        setFeedback(errors ? Object.values(errors).join(" ") : "Something went wrong. Please try again.");
+        setFeedback(errors ? Object.values(errors).join(" ") : t.contact.errorMessage);
         setStatus("error");
       }
     } catch {
-      setFeedback("Connection error. Please check your internet connection.");
+      setFeedback(t.contact.connectionError);
       setStatus("error");
     }
   }
