@@ -6,6 +6,8 @@ import { easeOut } from "@/lib/motion";
 import { cardSurface } from "@/lib/ui";
 import { useLanguage } from "@/lib/LanguageContext";
 
+const KAWN_SUPPORT_URL = "/api/support-proxy";
+
 type Status = "idle" | "loading" | "success" | "error";
 
 const inputClass =
@@ -56,38 +58,30 @@ export function ContactModal({ open, onClose }: ContactModalProps) {
     setFeedback("");
 
     try {
-      const data = { 
-        name: name.trim(), 
-        email: email.trim(), 
-        category, 
-        subject: subject.trim(), 
-        message: message.trim() 
-      };
+      const res = await fetch(KAWN_SUPPORT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ 
+          name: name.trim(), 
+          email: email.trim(), 
+          category, 
+          subject: subject.trim(), 
+          message: message.trim() 
+        }),
+      });
 
-      const response = await fetch(
-        "/support-proxy.php",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const data = await res.json();
 
-      const result = await response.json();
-      console.log(result);
-
-      if (response.ok) {
+      if (res.ok) {
         setStatus("success");
+        // Always use local translation for success to ensure it's in the correct language
         setFeedback(t.contact.successMessage);
       } else {
-        const errors = result.errors as Record<string, string> | undefined;
+        const errors = data.errors as Record<string, string> | undefined;
         setFeedback(errors ? Object.values(errors).join(" ") : t.contact.errorMessage);
         setStatus("error");
       }
-    } catch (error) {
-      console.error("Submission error:", error);
+    } catch {
       setFeedback(t.contact.connectionError);
       setStatus("error");
     }
