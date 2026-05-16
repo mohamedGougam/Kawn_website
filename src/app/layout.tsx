@@ -17,6 +17,7 @@ const kawnArabic = IBM_Plex_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kawn.io'),
   title: "Kawn — Social, reimagined",
   description:
     "Share moments, join conversations, and stay close to your communities with the Kawn social app.",
@@ -41,8 +42,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${kawnSans.variable} ${kawnArabic.variable} h-full scroll-smooth`}>
       <head>
-        <link rel="icon" href="/images/Logo.jpeg" type="image/jpeg" />
-        <link rel="apple-touch-icon" href="/images/Logo.jpeg" />
+        <link rel="icon" href="/images/favicon.jpeg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/images/favicon.jpeg" />
       </head>
       <body className="min-h-full flex flex-col bg-white text-zinc-900 antialiased">
         <LanguageProvider>

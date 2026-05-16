@@ -12,13 +12,11 @@ import { WhyKawn } from "@/components/WhyKawn";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kawn — Social, reimagined",
-  description:
-    "Share moments, join conversations, and stay close to your communities with the Kawn social app.",
+  title: "كون — تواصل اجتماعي برؤية جديدة",
+  description: "شارك لحظاتك وانضم للمحادثات وابقى قريبًا من مجتمعاتك مع تطبيق كون الاجتماعي.",
   openGraph: {
-    title: "Kawn — Social, reimagined",
-    description:
-      "Download Kawn for iOS and Android. A modern space to connect without the noise.",
+    title: "كون — تواصل اجتماعي برؤية جديدة",
+    description: "قم بتحميل كون لنظامي iOS و Android. مساحة عصرية للتواصل بدون ضوضاء.",
     images: [
       {
         url: "/images/og-image.jpeg",
@@ -30,7 +28,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default function HomeArabic() {
   return (
     <>
       <Navbar />

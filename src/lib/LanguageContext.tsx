@@ -17,9 +17,18 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("kawn-locale") as Locale;
-    if (saved && (saved === "en" || saved === "ar")) {
-      setLocaleState(saved);
+    // 1. Try URL path first for static routing (/ar)
+    const pathname = window.location.pathname;
+    
+    if (pathname.startsWith('/ar')) {
+      setLocaleState('ar');
+      localStorage.setItem("kawn-locale", 'ar');
+    } else if (pathname === '/') {
+      // 2. Fall back to localStorage if on root
+      const saved = localStorage.getItem("kawn-locale") as Locale;
+      if (saved && (saved === "en" || saved === "ar")) {
+        setLocaleState(saved);
+      }
     }
     setMounted(true);
   }, []);
@@ -35,6 +44,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         document.documentElement.classList.add("font-arabic");
       } else {
         document.documentElement.classList.remove("font-arabic");
+      }
+      
+      // Update URL path so copied links point to the static HTML file
+      if (locale === 'ar' && window.location.pathname !== '/ar') {
+        window.history.replaceState({}, "", "/ar");
+      } else if (locale === 'en' && window.location.pathname === '/ar') {
+        window.history.replaceState({}, "", "/");
       }
     }
   }, [locale, mounted]);

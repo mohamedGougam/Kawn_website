@@ -19,6 +19,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot,
   },
+  trailingSlash: true,
   async rewrites() {
     return [
       {
