@@ -172,26 +172,43 @@ export const translations = {
       }
     },
     whyKawn: {
-      title: "Why Kawn",
-      description: "Safer, healthier, more human social—summarized before you download.",
-      cards: {
-        communities: {
-          title: "Communities",
-          description: "Gather around shared interests with spaces designed for respect and belonging."
+      title: "Why People Choose Kawn",
+      subtitle: "One App. One Community. One Place.",
+      description: "Why switch between multiple apps when everything can live in one place? Kawn brings together communities, conversations, content creation, discovery, messaging, events, and real-world connections into a single platform designed around people and their interests.",
+      sections: [
+        {
+          title: "Freedom of Expression",
+          description: "Kawn encourages open dialogue, diverse perspectives, and respectful conversations. We believe freedom of expression should empower people to share ideas, exchange experiences, and strengthen communities while promoting respect and responsibility."
         },
-        events: {
-          title: "Events",
-          description: "Turn online discovery into real-world participation and lasting connection."
+        {
+          title: "Guardian-Verified Child Safety",
+          description: "Children deserve a safer digital world, and parents deserve peace of mind. For users under 16, Kawn requires guardian authentication before account activation. Parents and guardians become part of the onboarding journey, creating a verified guardian-minor relationship that promotes transparency, accountability, and safer digital experiences. Because protecting younger generations should not be an afterthought."
         },
-        discovery: {
-          title: "Discovery",
-          description: "Find people, topics, and communities that match you—without the endless noise."
+        {
+          title: "KawnPulse — Your Interests, All in One Place",
+          description: "Stay informed without jumping between dozens of platforms. KawnPulse uses AI to gather, organize, and summarize the latest news, discussions, updates, and trends related to the topics that matter most to you. One place. Your interests. Always up to date."
         },
-        conversations: {
-          title: "Conversations",
-          description: "Share ideas and replies in a calmer feed built for healthier engagement."
+        {
+          title: "Communities at the Heart of Everything",
+          description: "Sports, entertainment, gaming, technology, business, education, culture, travel, and thousands of other interests. Kawn is built around communities first, helping people discover meaningful connections through shared passions, experiences, and goals."
+        },
+        {
+          title: "AI-Powered Content Creation",
+          description: "Create, enhance, and share content with confidence. From images and videos to captions, summaries, and creative inspiration, Kawn provides AI-powered tools that help bring ideas to life while keeping creativity in the hands of users."
+        },
+        {
+          title: "Better Content Quality Without Limiting Creativity",
+          description: "Quality should be encouraged, not enforced. Kawn promotes valuable, engaging, and authentic content while respecting different cultures, opinions, communication styles, and creative expression. We help communities discover quality content without restricting individuality."
+        },
+        {
+          title: "Everything You Expect From Modern Social Media",
+          description: "Posts, stories, reels, community groups, messaging, audio calls, video calls, events, content sharing, and much more. All designed to work together in one connected and community-driven experience."
+        },
+        {
+          title: "Help Shape the Future of Social Media",
+          description: "Social media should bring people together, not push them apart. Kawn is building a healthier digital ecosystem based on communities, meaningful conversations, freedom of expression, family safety, and positive human connection. If you believe in a better future for social media, help us grow by sharing Kawn with your friends, family, colleagues, and communities. Together, we can build a more human social experience."
         }
-      }
+      ]
     }
   },
   ar: {
@@ -365,26 +382,43 @@ export const translations = {
       }
     },
     whyKawn: {
-      title: "لماذا كون",
-      description: "تواصل اجتماعي أكثر أمانًا وصحة وإنسانية — ملخص قبل التحميل.",
-      cards: {
-        communities: {
-          title: "المجتمعات",
-          description: "اجتمع حول الاهتمامات المشتركة مع مساحات مصممة للاحترام والانتماء."
+      title: "لماذا يختار الناس Kawn؟",
+      subtitle: "تطبيق واحد. مجتمع واحد. مكان واحد.",
+      description: "لماذا تحتاج إلى التنقل بين عشرات التطبيقات بينما يمكن أن تجد كل ما تحتاجه في مكان واحد؟ يجمع Kawn بين المجتمعات، والمحادثات، وإنشاء المحتوى، واكتشاف الاهتمامات، والمراسلة، والفعاليات، والتواصل الواقعي في منصة واحدة مصممة حول الإنسان واهتماماته.",
+      sections: [
+        {
+          title: "حرية التعبير",
+          description: "يشجع Kawn الحوار المفتوح، وتبادل الآراء، واحترام وجهات النظر المختلفة. نؤمن بأن حرية التعبير يجب أن تكون وسيلة لبناء المجتمعات وتقوية الروابط بين الناس، مع الحفاظ على الاحترام والمسؤولية المتبادلة."
         },
-        events: {
-          title: "الفعاليات",
-          description: "حول الاكتشاف عبر الإنترنت إلى مشاركة حقيقية واتصال دائم."
+        {
+          title: "أمان الأطفال بإشراف أولياء الأمور",
+          description: "يستحق الأطفال عالماً رقمياً أكثر أماناً، ويستحق أولياء الأمور راحة البال. للمستخدمين دون سن 16 عاماً، يتطلب Kawn مصادقة ولي الأمر قبل تفعيل الحساب. ويصبح ولي الأمر جزءاً من رحلة التسجيل، مما ينشئ علاقة موثقة بين الطفل وولي أمره داخل المنصة، لتعزيز الشفافية والمسؤولية وتوفير تجربة رقمية أكثر أماناً. لأن حماية الأجيال القادمة يجب أن تكون جزءاً أساسياً من تصميم المنصة، لا مجرد إضافة لاحقة."
         },
-        discovery: {
-          title: "الاكتشاف",
-          description: "ابحث عن الأشخاص والمواضيع والمجتمعات التي تناسبك — بدون الضوضاء اللانهائية."
+        {
+          title: "KawnPulse — اهتماماتك في مكان واحد",
+          description: "ابقَ على اطلاع دون الحاجة للتنقل بين عشرات المواقع والتطبيقات. يستخدم KawnPulse الذكاء الاصطناعي لجمع وتنظيم وتلخيص أحدث الأخبار والنقاشات والتحديثات والاتجاهات المتعلقة بالمواضيع التي تهمك. مكان واحد. اهتماماتك. وكل ما هو جديد بين يديك."
         },
-        conversations: {
-          title: "المحادثات",
-          description: "شارك الأفكار والردود في موجز أكثر هدوءًا مصمم لمشاركة أكثر صحة."
+        {
+          title: "المجتمعات في قلب كل شيء",
+          description: "رياضة، ترفيه، ألعاب، تقنية، أعمال، تعليم، ثقافة، سفر، وآلاف الاهتمامات الأخرى. تم تصميم Kawn حول المجتمعات أولاً، لمساعدة الناس على بناء علاقات حقيقية من خلال الاهتمامات والتجارب والأهداف المشتركة."
+        },
+        {
+          title: "أدوات إنشاء المحتوى المدعومة بالذكاء الاصطناعي",
+          description: "أنشئ وطور وشارك محتواك بثقة. من الصور ومقاطع الفيديو إلى النصوص والوصف والملخصات والأفكار الإبداعية، يوفر Kawn أدوات ذكية تساعدك على تحويل أفكارك إلى محتوى مميز مع الحفاظ على إبداعك وأسلوبك الخاص."
+        },
+        {
+          title: "محتوى أفضل دون تقييد الإبداع",
+          description: "نؤمن بأن جودة المحتوى يجب أن تُشجَّع لا أن تُفرض. يساعد Kawn المستخدمين على اكتشاف المحتوى القيّم والهادف مع احترام الثقافات المختلفة والآراء المتنوعة وأساليب التعبير والإبداع الفردي. نحن نشجع الجودة دون المساس بحرية التعبير."
+        },
+        {
+          title: "كل ما تتوقعه من منصة تواصل اجتماعي حديثة",
+          description: "منشورات، قصص، فيديوهات قصيرة، مجموعات مجتمعية، رسائل فورية، مكالمات صوتية ومرئية، فعاليات، مشاركة محتوى، وغير ذلك الكثير. كل ذلك ضمن تجربة مترابطة تتمحور حول المجتمع والتواصل الإنساني."
+        },
+        {
+          title: "ساهم في صناعة مستقبل أفضل لوسائل التواصل الاجتماعي",
+          description: "يجب أن تجمع وسائل التواصل الاجتماعي الناس، لا أن تفرقهم. يعمل Kawn على بناء منظومة رقمية أكثر صحة وإنسانية، قائمة على المجتمعات، والمحادثات الهادفة، وحرية التعبير، وأمان العائلات، والتواصل الإيجابي بين البشر. إذا كنت تؤمن بأن مستقبل وسائل التواصل الاجتماعي يمكن أن يكون أفضل، فساعدنا على النمو من خلال مشاركة Kawn مع أصدقائك وعائلتك وزملائك ومجتمعاتك. معاً، يمكننا بناء تجربة اجتماعية أكثر إنسانية للجميع."
         }
-      }
+      ]
     }
   },
 };
